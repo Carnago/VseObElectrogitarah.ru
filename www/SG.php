@@ -25,15 +25,15 @@
 <header>
 	<nav class="dws-menu">
 		<ul>
-			<li><a href="Index.html"><i class="g-main"></i>Главная</a></li>
+			<li><a href="http://vseobelectrogitarah.ru/index.php"><i class="g-main">Главная</i></a></li>
 			<li><a href="#"><i class="g-guitar"></i>Электрогитары</a>
 				<ul>
 					<li><a href="#">Формфактор</a>
 						<ul>
-							<a href="Stratocaster.html">Stratocaster</a>
-							<a href="Tele.html">Telecaster</a>
-							<a href="SG.html.html">SG</a>
-							<a href="FlyingV.html">Flying V</a>
+							<a href="Stratocaster.php">Stratocaster</a>
+							<a href="Tele.php">Telecaster</a>
+							<a href="SG.php">SG</a>
+							<a href="FlyingV.php">Flying V</a>
 							
 
 						</ul>
@@ -51,7 +51,7 @@
 							<a href="#">Fender</a>
 							<a href="#">Gibson</a>
 							<a href="#">Ibanez</a>
-							<a href="epiphone.html">Epiphone</a>
+							<a href="epiphone.php">Epiphone</a>
 							
 
 						</ul>

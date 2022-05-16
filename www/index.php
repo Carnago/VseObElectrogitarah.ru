@@ -27,10 +27,10 @@
 				<ul>
 					<li><a href="#">Формфактор</a>
 						<ul>
-							<a href="Stratocaster.html">Stratocaster</a>
+							<a href="Stratocaster.php">Stratocaster</a>
 							<a href="#">Telecaster</a>
-							<a href="SG.html">SG</a>
-							<a href="FlyingV.html">Flying V</a>
+							<a href="SG.php">SG</a>
+							<a href="FlyingV.php">Flying V</a>
 							
 
 						</ul>
@@ -48,7 +48,7 @@
 							<a href="#">Fender</a>
 							<a href="#">Gibson</a>
 							<a href="#">Ibanez</a>
-							<a href="epiphone.html">Epiphone</a>
+							<a href="epiphone.php">Epiphone</a>
 							
 
 						</ul>
