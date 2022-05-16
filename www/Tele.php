@@ -25,10 +25,10 @@
 <header>
 	<nav class="dws-menu">
 		<ul>
-			<li><a href="http://vseobelectrogitarah.ru/index.php"><i class="g-main">Р“Р»Р°РІРЅР°СЏ</i></a></li>
-			<li><a href="#"><i class="g-guitar"></i>Р­Р»РµРєС‚СЂРѕРіРёС‚Р°СЂС‹</a>
+			<li><a href="http://vseobelectrogitarah.ru/index.php"><i class="g-main">Главная</i></a></li>
+			<li><a href="#"><i class="g-guitar">Электрогитары</i></a>
 				<ul>
-					<li><a href="#">Р¤РѕСЂРјС„Р°РєС‚РѕСЂ</a>
+					<li><a href="#">Формфактор</a>
 						<ul>
 							<a href="Stratocaster.php">Stratocaster</a>
 							<a href="Tele.php">Telecaster</a>
@@ -38,15 +38,15 @@
 
 						</ul>
 					</li>
-					<li><a href="#">РЎС‚СЂСѓРЅС‹</a></li>
-					<li><a href="#">РљР°Рє СѓСЃС‚СЂРѕРµРЅР°</a></li>
+					<li><a href="#">Струны</a></li>
+					<li><a href="#">Как устроена</a></li>
 				</ul>	
 			</li>
 
-			<li><a href="#"><i class="g-guitarists"></i>Р“РёС‚Р°СЂРёСЃС‚С‹</a></li>
-			<li><a href="#"><i class="g-history"></i>РСЃС‚РѕСЂРёСЏ</a>
+			<li><a href="#"><i class="g-guitarists">Гитаристы</i></a></li>
+			<li><a href="#"><i class="g-history">История</i></a>
 				<ul>
-					<li><a href="#">РџСЂРѕРёР·РІРѕРґРёС‚РµР»Рё РіРёС‚Р°СЂ</a>
+					<li><a href="#">Производители гитар</a>
 						<ul>
 							<a href="#">Fender</a>
 							<a href="#">Gibson</a>
@@ -56,11 +56,11 @@
 
 						</ul>
 					</li>
-					<li><a href="#">РџСЂРѕРёР·РІРѕРґРёС‚РµР»Рё СЃС‚СЂСѓРЅ</a></li>
+					<li><a href="#">Производители струн</a></li>
 					
 				</ul>
 			</li>
-			<li><a href="#"><i class="g-style"></i>РўРµС…РЅРёРєРё РёРіСЂС‹</a></li>
+			<li><a href="#"><i class="g-style">Техники игры</i></a></li>
 		</ul>
 
 		</nav>

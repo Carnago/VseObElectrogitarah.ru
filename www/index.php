@@ -28,7 +28,7 @@
 					<li><a href="#">Формфактор</a>
 						<ul>
 							<a href="Stratocaster.php">Stratocaster</a>
-							<a href="#">Telecaster</a>
+							<a href="Tele.php">Telecaster</a>
 							<a href="SG.php">SG</a>
 							<a href="FlyingV.php">Flying V</a>
 							
@@ -40,8 +40,8 @@
 				</ul>	
 			</li>
 
-			<li><a href="#"><i class="g-guitarists"></i>Гитаристы</a></li>
-			<li><a href="#"><i class="g-history"></i>История</a>
+			<li><a href="#"><i class="g-guitarists">Гитаристы</i></a></li>
+			<li><a href="#"><i class="g-history">История</i></a>
 				<ul>
 					<li><a href="#">Производители гитар</a>
 						<ul>
@@ -57,7 +57,7 @@
 					
 				</ul>
 			</li>
-			<li><a href="#"><i class="g-style"></i>Техники игры</a></li>
+			<li><a href="#"><i class="g-style">Техники игры</i></a></li>
 		</ul>			
 	</nav>
 </header>
