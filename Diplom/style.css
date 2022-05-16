@@ -1,0 +1,101 @@
+body{background-image: url("Backk.jpg");}
+*
+{
+font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+#header
+{
+    width: 50px;
+    height: 25px;
+    background-color: #000000;
+    margin-bottom: 35px;
+    background-image: url(/headd.jpg);
+}
+ 
+.dws-menu *{
+ margin: 0;
+ padding: 0;
+}
+
+/*---------------------- (Сброс отступов)*/
+
+.dws-menu ul,  
+.dws-menu li{
+ list-style: none;
+}    
+
+/*---------------------- (Скроем маркеры)*/
+
+.dws-menu > ul{
+ display: flex;
+ justify-content: center;
+}    
+
+/*---------------------- (Делаем по центру)*/
+
+.dws-menu > ul li a{
+ display: block;
+ background: #ececed;
+ padding: 25px 40px 25px 40px;
+ font-size: 15px;
+ color: #454547;
+ text-decoration: none;
+ text-transform:uppercase;
+}    
+
+/*---------------------- (отбираем ссылки, делаем их блочными эл. Задаем фон)*/
+
+.dws-menu > ul li:first-child{
+ border-left: 1px solid #b2b3b5;
+}
+.dws-menu > ul li:last-child{
+ border-right: 1px solid #babbbd;
+}  
+.dws-menu > ul li{
+ position: relative;
+ border-right: 2px solid #c7c8ca;
+}   
+.dws-menu li a:hover{
+ background: #454547;
+ color: #ffffff;
+ box-shadow: 1px 5px 10px -5px black;
+ transition: all 0.3s ease;
+}  
+.dws-menu > ul li a{
+ display: block;
+ background: #ececed;
+ padding: 15px 30px 15px 40px;
+ font-size: 14px;
+ color: #454547;
+ text-decoration: none;
+ text-transform:uppercase;
+ transition: all 0.3s ease;
+}    
+.dws-menu li ul{
+ position: absolute;
+ min-width: 150px;
+}      
+.dws-menu li > ul li{
+ border: 1px solid #c7c8ca;
+}    
+.dws-menu li > ul li a{
+ padding: 10px;
+ text-transform: none;
+ background: #e4e4e5;
+}    
+.dws-menu li > ul li ul{   
+ position: absolute;
+ right: -150px;
+ top: -1px;
+}    
+.dws-menu li ul{
+
+ position: absolute;
+ min-width: 150px;
+ display: none;
+}    
+.dws-menu li:hover > ul{
+ display: block;
+ 
+}   
