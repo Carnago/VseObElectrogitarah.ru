@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -28,7 +30,7 @@
 					<li><a href="#">Формфактор</a>
 						<ul>
 							<a href="Stratocaster.php">Stratocaster</a>
-							<a href="#">Telecaster</a>
+							<a href="Tele.php">Telecaster</a>
 							<a href="SG.php">SG</a>
 							<a href="FlyingV.php">Flying V</a>
 							
@@ -40,8 +42,8 @@
 				</ul>	
 			</li>
 
-			<li><a href="#"><i class="g-guitarists"></i>Гитаристы</a></li>
-			<li><a href="#"><i class="g-history"></i>История</a>
+			<li><a href="#"><i class="g-guitarists">Гитаристы</i></a></li>
+			<li><a href="#"><i class="g-history">История</i></a>
 				<ul>
 					<li><a href="#">Производители гитар</a>
 						<ul>
@@ -57,15 +59,36 @@
 					
 				</ul>
 			</li>
-			<li><a href="#"><i class="g-style"></i>Техники игры</a></li>
+			<li><a href="#"><i class="g-style">Техники игры</i></a></li>
 		</ul>			
 	</nav>
 </header>
 <table align="center" border="4" bordercolor="#000000" width="70%" height="4450px" bgcolor="#FFF5EE" cellpadding="25px">
         <tr>
-			<td valign="top"><p>Данный сайт существует для ответов на большинство вопростов касаемо электрогитар, жанров, стилей.
-			Приятного изучения материала! </p></td>и 
+			<td valign="top"><p>
+			<br>
+<?php		
+$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
+if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
+$sql = 'SELECT * FROM first';
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_array($result))
+{
+	print($row['text1']);
+}
+$conn->close();
+?>
+
+			</p></td>и 
 		</tr>
+		 <tr>
+			<td valign="top"><p>
+
+
+			</p></td>
+		</tr>
+	
+		
    </table>	
 </body>
 </html>
