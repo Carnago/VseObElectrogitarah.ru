@@ -10,17 +10,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
 	<title>Все о электрогитарах</title>
 	<style>
-      p
+    p
 	{
 		font-family: Geneva, Arial, Helvetica, sans-serif;
         font-size: 20pt;
         text-indent: 2em;
         text-align: justify;
 	}
+	<!--
+	button[name="Run"]
+	{
+		padding: 10px 25px;
+		border: none;
+	}
+	-->
 	</style>
 
 </head>
 <body>
+
+			
+
+
 <header>
 	<nav class="dws-menu">
 		<ul>
@@ -65,7 +76,70 @@
 </header>
 <table align="center" border="4" bordercolor="#000000" width="70%" height="4450px" bgcolor="#FFF5EE" cellpadding="25px">
         <tr>
-			<td valign="top"><p>
+			<td valign="top">
+			<button type="button"name="Run" onclick="QWE()">Запуск скрипта </button>
+			<p>
+			
+			
+			
+			
+			
+			
+			
+			<div>
+<script type="text/javascript">
+  /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
+  function getXmlHttp() {
+    var xmlhttp;
+    try {
+      xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+    try {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (E) {
+      xmlhttp = false;
+    }
+    }
+    if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+      xmlhttp = new XMLHttpRequest();
+    }
+    return xmlhttp;
+  }
+  function summa() {
+    var a = document.getElementById("a").value; // Считываем значение a
+    var b = document.getElementById("b").value; // Считываем значение b
+    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
+    xmlhttp.open('POST', '_Post_1.php', true); // Открываем асинхронное соединение
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    xmlhttp.send("a=" + encodeURIComponent(a) + "&b=" + encodeURIComponent(b)); // Отправляем POST-запрос
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById("summa").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+  }
+</script>
+<div>
+  <input type="text" name="a" id="a" />
+  <br />
+  <input type="text" name="b" id="b" />
+  <br />
+  <input type="button" value="Сумма" onclick="summa()" />
+  <p>Сумма равна: <span id="summa"></span></p>
+</div>
+</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			<br>
 <?php		
@@ -80,10 +154,6 @@ while ($row = mysqli_fetch_array($result))
 $conn->close();
 ?>
 
-			</p></td>и 
-		</tr>
-		 <tr>
-			<td valign="top"><p>
 
 
 			</p></td>
