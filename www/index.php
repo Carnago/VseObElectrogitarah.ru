@@ -117,7 +117,7 @@
     var a = _a; // Считываем значение a
     var b = _b; // Считываем значение b
     var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', '_Post_1.php', true); // Открываем асинхронное соединение
+    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post.php', true); // Открываем асинхронное соединение
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
     xmlhttp.send("a=" + encodeURIComponent(a) + "&b=" + encodeURIComponent(b)); // Отправляем POST-запрос
 	console.log(xmlhttp); 
@@ -135,7 +135,7 @@
   <br />
   <input type="text" name="b" id="b" />
   <br />
-  <input type="button" value="Сумма" onclick="summa(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
+  <input type="button" value="Сумма" onclick="summa__(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
   <p>Сумма равна: <span id="summa"></span></p>
 </div>
 </div>
