@@ -5,6 +5,7 @@
 <head>
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 	<meta charset="UTF-8">
+	<!--<script src="GetTXT_FromBd_By_Post.js"></script>-->
 	<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
@@ -87,35 +88,43 @@
 			
 			
 			<div>
+
 <script type="text/javascript">
   /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
   function getXmlHttp() {
     var xmlhttp;
-    try {
-      xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-    } catch (e) {
-    try {
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    } catch (E) {
-      xmlhttp = false;
+    try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");} catch (e) {
+		try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");} catch (E) { xmlhttp = false; }
     }
-    }
-    if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-      xmlhttp = new XMLHttpRequest();
-    }
+    if (!xmlhttp && typeof XMLHttpRequest!='undefined') { xmlhttp = new XMLHttpRequest();}
     return xmlhttp;
   }
-  function summa() {
-    var a = document.getElementById("a").value; // Считываем значение a
-    var b = document.getElementById("b").value; // Считываем значение b
+  function summa(_a,_b,insertHtmlId) {
+    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
+    xmlhttp.open('POST', '_Post_1.php', true); // Открываем асинхронное соединение
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    xmlhttp.send("a=" + encodeURIComponent(_a) + "&b=" + encodeURIComponent(_b)); // Отправляем POST-запрос
+	console.log(xmlhttp); 
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+  }
+  function summa__(_a,_b,insertHtmlId) {
+    var a = _a; // Считываем значение a
+    var b = _b; // Считываем значение b
     var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
     xmlhttp.open('POST', '_Post_1.php', true); // Открываем асинхронное соединение
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
     xmlhttp.send("a=" + encodeURIComponent(a) + "&b=" + encodeURIComponent(b)); // Отправляем POST-запрос
+	console.log(xmlhttp); 
     xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
       if (xmlhttp.readyState == 4) { // Ответ пришёл
         if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById("summa").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
         }
       }
     };
@@ -126,7 +135,7 @@
   <br />
   <input type="text" name="b" id="b" />
   <br />
-  <input type="button" value="Сумма" onclick="summa()" />
+  <input type="button" value="Сумма" onclick="summa(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
   <p>Сумма равна: <span id="summa"></span></p>
 </div>
 </div>
