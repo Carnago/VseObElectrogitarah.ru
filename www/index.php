@@ -113,13 +113,25 @@
       }
     };
   }
-  function summa__(_a,_b,insertHtmlId) {
-    var a = _a; // Считываем значение a
-    var b = _b; // Считываем значение b
+  function summa_1(_a,_b,insertHtmlId) {
     var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post.php', true); // Открываем асинхронное соединение
+    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post_1.php', true); // Открываем асинхронное соединение
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-    xmlhttp.send("a=" + encodeURIComponent(a) + "&b=" + encodeURIComponent(b)); // Отправляем POST-запрос
+	xmlhttp.send(); // Отправляем POST-запрос
+	console.log(xmlhttp); 
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+  }
+  function summa_2(_a,_b,insertHtmlId) {
+    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
+    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post_2.php', true); // Открываем асинхронное соединение
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    xmlhttp.send("a=id_160923052022" + "&b=" + encodeURIComponent(5)); // Отправляем POST-запрос
 	console.log(xmlhttp); 
     xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
       if (xmlhttp.readyState == 4) { // Ответ пришёл
@@ -135,7 +147,7 @@
   <br />
   <input type="text" name="b" id="b" />
   <br />
-  <input type="button" value="Сумма" onclick="summa__(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
+  <input type="button" value="Сумма" onclick="summa_2(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
   <p>Сумма равна: <span id="summa"></span></p>
 </div>
 </div>
