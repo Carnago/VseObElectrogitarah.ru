@@ -66,6 +66,7 @@
 <table align="center" border="4" bordercolor="#000000" width="70%" height="4450px" bgcolor="#FFF5EE" cellpadding="25px">
         <tr>
 			<td valign="top"><p>
+			
 			<br>
 <?php		
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
