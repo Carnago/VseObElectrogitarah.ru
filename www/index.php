@@ -81,12 +81,6 @@
 			<button type="button"name="Run" onclick="QWE()">Запуск скрипта </button>
 			<p>
 			
-			
-			
-			
-			
-			
-			
 			<div>
 
 <script type="text/javascript">
@@ -144,26 +138,19 @@
 </script>
 <div>
   <input type="text" name="a" id="a" />
-  <br />
+  <br/>
   <input type="text" name="b" id="b" />
-  <br />
+  <br/>
   <input type="button" value="Сумма" onclick="summa_2(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
-  <p>Сумма равна: <span id="summa"></span></p>
+  <script defer>
+	summa_2(document.getElementById('a').value,document.getElementById('b').value,'summa');
+  </script>
+  <p><!--Сумма равна:--><span id="summa"></span></p>
 </div>
 </div>
-			
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<br>
+<br>
 <?php		
+/*
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 $sql = 'SELECT * FROM first';
@@ -173,14 +160,10 @@ while ($row = mysqli_fetch_array($result))
 	print($row['text1']);
 }
 $conn->close();
+*/
 ?>
-
-
-
 			</p></td>
 		</tr>
-	
-		
    </table>	
 </body>
 </html>
