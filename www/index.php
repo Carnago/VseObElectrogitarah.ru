@@ -1,3 +1,29 @@
+<script>
+function Post(_PHP,_Send_Params,insertHtmlId) {
+	function Get_XmlHttp() {
+		var xmlhttp;
+		try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");} catch (e) {
+			try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");} catch (E) { xmlhttp = false; }
+		}
+		if (!xmlhttp && typeof XMLHttpRequest!='undefined') { xmlhttp = new XMLHttpRequest();}
+		return xmlhttp;
+	}
+	var xmlhttp = Get_XmlHttp();
+	xmlhttp.open('POST', _PHP, true); // Открываем асинхронное соединение
+	xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+	xmlhttp.send(_Send_Params); // Отправляем POST-запрос
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+}
+function Test_Post() {
+	Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
+}
+</script>
 
 
 <!doctype html>
@@ -79,9 +105,9 @@
         <tr>
 			<td valign="top">
 			<button type="button"name="Run" onclick="QWE()">Запуск скрипта </button>
-			<p>
 			
-			<div>
+			
+			
 
 <script type="text/javascript">
   /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
@@ -135,49 +161,16 @@
       }
     };
   }
-////////////////////////////////////////////////////////  
-function Post(_PHP,_Send_Params,insertHtmlId) {
-	function Get_XmlHttp() {
-		var xmlhttp;
-		try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");} catch (e) {
-			try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");} catch (E) { xmlhttp = false; }
-		}
-		if (!xmlhttp && typeof XMLHttpRequest!='undefined') { xmlhttp = new XMLHttpRequest();}
-		return xmlhttp;
-	}
-	var xmlhttp = Get_XmlHttp();
-	xmlhttp.open('POST', _PHP, true); // Открываем асинхронное соединение
-	xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-	xmlhttp.send(_Send_Params); // Отправляем POST-запрос
-    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-      if (xmlhttp.readyState == 4) { // Ответ пришёл
-        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
-        }
-      }
-    };
-}
-function Test_Post() {
-	Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'summa');
-}
 </script>
-<div>
-  <input type="text" name="a" id="a" />
-  <br/>
-  <input type="text" name="b" id="b" />
-  <br/>
-  <!--
-  <input type="button" value="Сумма" onclick="summa_2(document.getElementById('a').value,document.getElementById('b').value,'summa')" />
-  -->
-  <script defer>
-	Test_Post();
-	//summa_2(document.getElementById('a').value,document.getElementById('b').value,'summa');
-  </script>
-  <p><!--Сумма равна:--><span id="summa"></span></p>
+<div id="id_160923052022">
+  
+  
 </div>
-</div>
-<br>
-			</p></td>
+<script defer>
+	//php Post Запрос который выдерает контент
+	Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
+</script>
+			</td>
 		</tr>
    </table>	
 </body>
