@@ -4,7 +4,7 @@
 <html lang="ru">
 <head>
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-	<meta charset="UTF-8">
+	-
 	<!--<script src="GetTXT_FromBd_By_Post.js"></script>-->
 	<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
 	<link rel="stylesheet" href="style.css" type="text/css">
@@ -149,19 +149,6 @@
 </div>
 </div>
 <br>
-<?php		
-/*
-$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
-if($conn->connect_error){die("Îøèáêà: " . $conn->connect_error);}
-$sql = 'SELECT * FROM first';
-$result = mysqli_query($conn, $sql);
-while ($row = mysqli_fetch_array($result))
-{
-	print($row['text1']);
-}
-$conn->close();
-*/
-?>
 			</p></td>
 		</tr>
    </table>	
