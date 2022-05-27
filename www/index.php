@@ -15,7 +15,12 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
     xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
       if (xmlhttp.readyState == 4) { // Ответ пришёл
         if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+			document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+			/*
+			const script = document.createElement("script");
+			script.textContent = oldScript.textContent;
+			document.getElementById(insertHtmlId)..appendChild(script);
+			*/
         }
       }
     };
@@ -102,11 +107,16 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
         <tr>
 			<td valign="top">
 			<button type="button"name="Run" onclick="QWE()">Запуск скрипта </button>
-			
-			
-			
 
 
+<!--
+
+sdfsdfsfs
+<frameset>
+<frame src="http://vseobelectrogitarah.ru/_IAdmin_Step1.php">
+</frameset>
+sdfsdfsfs
+-->
 <div id="id_160923052022"></div>
 <script defer>
 	//php Post Запрос который выдерает контент
