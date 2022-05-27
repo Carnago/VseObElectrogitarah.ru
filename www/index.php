@@ -20,9 +20,6 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
       }
     };
 }
-function Test_Post() {
-	Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
-}
 </script>
 
 
@@ -109,66 +106,13 @@ function Test_Post() {
 			
 			
 
-<script type="text/javascript">
-  /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
-  function getXmlHttp() {
-    var xmlhttp;
-    try { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");} catch (e) {
-		try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");} catch (E) { xmlhttp = false; }
-    }
-    if (!xmlhttp && typeof XMLHttpRequest!='undefined') { xmlhttp = new XMLHttpRequest();}
-    return xmlhttp;
-  }
-  function summa(_a,_b,insertHtmlId) {
-    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', '_Post_1.php', true); // Открываем асинхронное соединение
-    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-    xmlhttp.send("a=" + encodeURIComponent(_a) + "&b=" + encodeURIComponent(_b)); // Отправляем POST-запрос
-	console.log(xmlhttp); 
-    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-      if (xmlhttp.readyState == 4) { // Ответ пришёл
-        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
-        }
-      }
-    };
-  }
-  function summa_1(_a,_b,insertHtmlId) {
-    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post_1.php', true); // Открываем асинхронное соединение
-    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-	xmlhttp.send(); // Отправляем POST-запрос
-	console.log(xmlhttp); 
-    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-      if (xmlhttp.readyState == 4) { // Ответ пришёл
-        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
-        }
-      }
-    };
-  }
-  function summa_2(_a,_b,insertHtmlId) {
-    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', 'GetTXT_FromBd_By_Post_2.php', true); // Открываем асинхронное соединение
-    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-    xmlhttp.send("a=id_160923052022" + "&b=" + encodeURIComponent(5)); // Отправляем POST-запрос
-	console.log(xmlhttp); 
-    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-      if (xmlhttp.readyState == 4) { // Ответ пришёл
-        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-          document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
-        }
-      }
-    };
-  }
-</script>
-<div id="id_160923052022">
-  
-  
-</div>
+
+<div id="id_160923052022"></div>
 <script defer>
 	//php Post Запрос который выдерает контент
-	Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
+	//Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
+	//
+	Post('_IAdmin_Step1.php',"",'id_160923052022');
 </script>
 			</td>
 		</tr>
