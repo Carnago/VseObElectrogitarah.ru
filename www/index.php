@@ -1,18 +1,16 @@
 <?php
 $PageId = "id_160923052022";
-if($_GET["text"]==null)
-{
-	echo "Exception";
-    echo "<br>";
-}
-else{
-	echo  iconv( "UTF-8","windows-1251", $_GET["text"]);
-	echo "<br>";
-}
-?>				
-<script defer>
-alert('<?php $_GET["text"]?>');
-</script>
+	if($_GET["a"]==null){echo "a=null<br>";}
+	else{echo  iconv( "UTF-8","windows-1251", $_GET["a"]);echo "<br>";}
+	if($_GET["LogInn"]==null){echo "LogInn=null<br>";}
+	else{echo  iconv( "UTF-8","windows-1251", $_GET["LogInn"]);echo "<br>";}
+	if($_GET["PassWord"]==null){echo "PassWord=null<br>";}
+	else{echo  iconv( "UTF-8","windows-1251", $_GET["PassWord"]);echo "<br>";}
+	
+	if($_GET["text"]==null){echo "text=null<br>";}
+	else{echo  iconv( "UTF-8","windows-1251", $_GET["text"]);echo "<br>";}
+
+?>
 <script>
 function Post(_PHP,_Send_Params,insertHtmlId) {
 	function Get_XmlHttp() {
@@ -63,12 +61,8 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 	}
 	-->
 	</style>
-
 </head>
 <body>
-
-			
-
 
 <header>
 	<nav class="dws-menu">
@@ -170,13 +164,22 @@ SQL;
 	
 ?>
 </textarea>
+<script defer>
+console.log(document.getElementById("LogInn"));
+console.log(document.getElementById("LogInn").value);
+console.log(document.getElementById("PassWord"));
+console.log(document.getElementById("PassWord").value);
+</script>
 <script>
 	function onchange_78452387478234()
 	{
 		alert("dfkgoldfjghkjdlk");
 		window.open("http://vseobelectrogitarah.ru/index.php"
 			+"?text="+encodeURIComponent(document.getElementById("id_160923052022_textarea").value)
+			+"?a="+encodeURIComponent(document.getElementById("LogInn").value)
+			+"?b="+encodeURIComponent(document.getElementById("PassWord").value)
 		);
+		var wegfdhfdfhfbhn="?a="+encodeURIComponent(document.getElementById("skjfhgkdfgksdgjk").value);
 		console.log("werwerw");
 		window.close();
 	}
