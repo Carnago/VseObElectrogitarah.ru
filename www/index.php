@@ -1,4 +1,18 @@
-
+<?php
+$PageId = "id_160923052022";
+if($_GET["text"]==null)
+{
+	echo "Exception";
+    echo "<br>";
+}
+else{
+	echo  iconv( "UTF-8","windows-1251", $_GET["text"]);
+	echo "<br>";
+}
+?>				
+<script defer>
+alert('<?php $_GET["text"]?>');
+</script>
 <script>
 function Post(_PHP,_Send_Params,insertHtmlId) {
 	function Get_XmlHttp() {
@@ -103,11 +117,10 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 			<td valign="top" >
 				<div id="id_160923052022" >
 <?php
-$a = "id_160923052022";
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 $sql = <<<SQL
-SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$a';
+SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$PageId';
 SQL;
 $result = mysqli_query($conn, $sql);
 echo('<br>');
@@ -132,22 +145,20 @@ $conn->close();
 		</tr>
 		<tr >
 			<td valign="top" id="id_120827052022">
-<?php
-try {
-    echo $_GET["a"];
-	echo "<br>";
-} catch (Exception $e) {
-    echo "<br>";
-}
-?>				
+
+
+				<center>
+					<form action="handler.php">
+						<p><strong>Логин:</strong> 
+						<input maxlength="25" size="40" name="login" id="LogInn" value="Log"></p>
+						<p><strong>Пароль:</strong> 
+						<input type="password" maxlength="25" size="40" name="password" id="PassWord" value="Pass"></p>
 				<textarea id="id_160923052022_textarea" onchange="onchange_78452387478234();" id="skjfhgkdfgksdgjk">
 <?php
-
-	$a = "id_160923052022";
 	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 $sql = <<<SQL
-SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$a';
+SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$PageId';
 SQL;
 	$result = mysqli_query($conn, $sql);
 	echo('<br>');
@@ -163,28 +174,13 @@ SQL;
 	function onchange_78452387478234()
 	{
 		alert("dfkgoldfjghkjdlk");
-		var bjhfgbhdsfvbkj="http://vseobelectrogitarah.ru/index.php"
-		var wegfdhfdfhfbhn="?text="+document.getElementById("id_160923052022_textarea").value;
-		window.open(bjhfgbhdsfvbkj+wegfdhfdfhfbhn);
+		window.open("http://vseobelectrogitarah.ru/index.php"
+			+"?text="+encodeURIComponent(document.getElementById("id_160923052022_textarea").value)
+		);
 		console.log("werwerw");
 		window.close();
 	}
-</script>
-				<center>
-					<form action="handler.php">
-						<p><strong>Логин:</strong> 
-						<input maxlength="25" size="40" name="login" id="LogInn" value="Log"></p>
-						<p><strong>Пароль:</strong> 
-						<input type="password" maxlength="25" size="40" name="password" id="PassWord" value="Pass"></p>
-						<button onclick='function_121527052022();'>ИзменитьКонтент</button>
-						<script>						
-							function function_121527052022() {
-								var  L=document.getElementById("LogInn").value;
-								var  P=document.getElementById("LogInn").value;
-								Post('/IAdmin.php',"a=id_160923052022"+"&L="+L+"&P="+P,'id_160923052022_textarea');
-							}
-						</script>
-						
+</script>						
 						
 					</form>
 				</center>
