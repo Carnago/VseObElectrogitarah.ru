@@ -1,3 +1,4 @@
+
 <script>
 function Post(_PHP,_Send_Params,insertHtmlId) {
 	function Get_XmlHttp() {
@@ -11,19 +12,13 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 	var xmlhttp = Get_XmlHttp();
 	xmlhttp.open('POST', _PHP, true); // Открываем асинхронное соединение
 	xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-	xmlhttp.send(_Send_Params); // Отправляем POST-запрос
-    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-      if (xmlhttp.readyState == 4) { // Ответ пришёл
-        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-			document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
-			/*
-			const script = document.createElement("script");
-			script.textContent = oldScript.textContent;
-			document.getElementById(insertHtmlId)..appendChild(script);
-			*/
-        }
-      }
+	
+    xmlhttp.onload = function() { // Ждём ответа от сервера
+		document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+		xhr.abort();
     };
+	xmlhttp.send(_Send_Params); // Отправляем POST-запрос
+	
 }
 </script>
 
@@ -103,29 +98,110 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 		</ul>			
 	</nav>
 </header>
-<table align="center" border="4" bordercolor="#000000" width="70%" height="4450px" bgcolor="#FFF5EE" cellpadding="25px">
+<table align="center" border="4" bordercolor="#000000" width="70%" height="auto " bgcolor="#FFF5EE" cellpadding="25px">
         <tr>
-			<td valign="top">
-			<button type="button"name="Run" onclick="QWE()">Запуск скрипта </button>
+			<td valign="top" >
+				<div id="id_160923052022" >
+<?php
+$a = "id_160923052022";
+$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
+if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
+$sql = <<<SQL
+SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$a';
+SQL;
+$result = mysqli_query($conn, $sql);
+echo('<br>');
+while ($row = mysqli_fetch_array($result))
+{
+	echo($row['TEXT']);
+}
+$conn->close();
+?>
+				</div>
+				<button onclick='function_120927052022();'>ИзменитьКонтент</button>
+				<script>
+				function function_120927052022() {
+					if(document.getElementById('id_120827052022').style.visibility=='visible')
+					{document.getElementById('id_120827052022').style.visibility='hidden';}
+					else
+					{document.getElementById('id_120827052022').style.visibility='visible';}
+				}
+				</script>
+			</td>
+			
+		</tr>
+		<tr >
+			<td valign="top" id="id_120827052022">
+<?php
+try {
+    echo $_GET["a"];
+	echo "<br>";
+} catch (Exception $e) {
+    echo "<br>";
+}
+?>				
+				<textarea id="id_160923052022_textarea" onchange="onchange_78452387478234();" id="skjfhgkdfgksdgjk">
+<?php
 
-
-<!--
-
-sdfsdfsfs
-<frameset>
-<frame src="http://vseobelectrogitarah.ru/_IAdmin_Step1.php">
-</frameset>
-sdfsdfsfs
--->
-<div id="id_160923052022"></div>
-<script defer>
-	//php Post Запрос который выдерает контент
-	//Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022" + "&b=" + encodeURIComponent(5),'id_160923052022');
-	//
-	Post('_IAdmin_Step1.php',"",'id_160923052022');
+	$a = "id_160923052022";
+	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
+	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
+$sql = <<<SQL
+SELECT ID_html, TEXT FROM `SecondText` WHERE ID_html='$a';
+SQL;
+	$result = mysqli_query($conn, $sql);
+	echo('<br>');
+	while ($row = mysqli_fetch_array($result))
+	{
+		echo($row['TEXT']);
+	}
+	$conn->close();
+	
+?>
+</textarea>
+<script>
+	function onchange_78452387478234()
+	{
+		alert("dfkgoldfjghkjdlk");
+		var bjhfgbhdsfvbkj="http://vseobelectrogitarah.ru/index.php"
+		var wegfdhfdfhfbhn="?text="+document.getElementById("id_160923052022_textarea").value;
+		window.open(bjhfgbhdsfvbkj+wegfdhfdfhfbhn);
+		console.log("werwerw");
+		window.close();
+	}
 </script>
+				<center>
+					<form action="handler.php">
+						<p><strong>Логин:</strong> 
+						<input maxlength="25" size="40" name="login" id="LogInn" value="Log"></p>
+						<p><strong>Пароль:</strong> 
+						<input type="password" maxlength="25" size="40" name="password" id="PassWord" value="Pass"></p>
+						<button onclick='function_121527052022();'>ИзменитьКонтент</button>
+						<script>						
+							function function_121527052022() {
+								var  L=document.getElementById("LogInn").value;
+								var  P=document.getElementById("LogInn").value;
+								Post('/IAdmin.php',"a=id_160923052022"+"&L="+L+"&P="+P,'id_160923052022_textarea');
+							}
+						</script>
+						
+						
+					</form>
+				</center>
 			</td>
 		</tr>
+		<script defer>
+			//php Post Запрос который выдерает контент
+			//Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022",'id_160923052022');
+			//Post('GetTXT_FromBd_By_Post_2.php',"a=id_160923052022",'id_160923052022_textarea');
+			
+			//
+			//Post('_IAdmin_Step1.php',"",'id_160923052022');
+			//var  L=document.getElementById("LogInn").value;
+			//var  P=document.getElementById("PassWord").value;
+			//Post('/IAdmin.php',"a=id_160923052022"+"&L="+L+"&P="+P,'id_160923052022_textarea');
+			
+		</script>
    </table>	
 </body>
 </html>

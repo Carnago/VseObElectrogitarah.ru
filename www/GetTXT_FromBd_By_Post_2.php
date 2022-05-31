@@ -1,7 +1,5 @@
 <?php
-  $a = $_POST["a"];
-  $b = $_POST["b"];
-  
+  $a = $_POST["a"];  
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 //$sql = 'SELECT ID_html, TEXT FROM `SecondText`'; /*  нужно суметь в текстувую переменную подставить переменную php */
