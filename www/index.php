@@ -1,15 +1,54 @@
 <?php
 $PageId = "id_160923052022";
-	if($_GET["a"]==null){echo "a=null<br>";}
-	else{echo  iconv( "UTF-8","windows-1251", $_GET["a"]);echo "<br>";}
-	if($_GET["LogInn"]==null){echo "LogInn=null<br>";}
-	else{echo  iconv( "UTF-8","windows-1251", $_GET["LogInn"]);echo "<br>";}
-	if($_GET["PassWord"]==null){echo "PassWord=null<br>";}
-	else{echo  iconv( "UTF-8","windows-1251", $_GET["PassWord"]);echo "<br>";}
-	
-	if($_GET["text"]==null){echo "text=null<br>";}
-	else{echo  iconv( "UTF-8","windows-1251", $_GET["text"]);echo "<br>";}
+?>
+<?php
+//Вывод на экран параметра Get запроса
+function Print_GET_Param($var_1){if($_GET[$var_1]==null){echo $var_1;echo "=null<br>";}else{echo $var_1;echo "=";echo  iconv( "UTF-8","windows-1251", $_GET[$var_1]);echo "<br>";}};
+Print_GET_Param("LogInn");
+Print_GET_Param("PassWord");
+//Print_GET_Param("text");
+echo "!!!!!!!!!!!!!!!!!!!!";echo "<br>";
 
+/*
+//Не удалять до лучших времен
+if($_GET["text"]==null)echo 'if($_GET["text"]==null)<br>';
+if($_GET["text"]<>null)echo 'if($_GET["text"]<>null)<br>';
+if($_GET["LogInn"]==null)echo 'if($_GET["LogInn"]==null)<br>';
+if($_GET["LogInn"]<>null)echo 'if($_GET["LogInn"]<>null)<br>';
+if($_GET["PassWord"]==null)echo 'if($_GET["PassWord"]==null)<br>';
+if($_GET["PassWord"]<>null)echo 'if($_GET["PassWord"]<>null)<br>';
+$var_1="LogInn";
+$Flag=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
+if($Flag=="Log"){echo 'if(iconv( "UTF-8","windows-1251", $_GET[$var_1])=="Log")';echo "<br>";}
+$var_1="PassWord";
+$Flag=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
+if($Flag=="Pass"){echo 'if(iconv( "UTF-8","windows-1251", $_GET[$var_1])=="Pass")';echo "<br>";}
+*/
+$var_1="LogInn";
+$Flag_LogInn=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
+$var_1="PassWord";
+$Flag_PassWord=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
+
+if($_GET["text"]<>null)if($_GET["LogInn"]<>null)if($_GET["PassWord"]<>null)
+	if($Flag_LogInn=="Log")
+		if($Flag_PassWord=="Pass")
+{
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+	//!!!!	
+	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
+	$BHJFGUDSGFKJD=iconv( "UTF-8","windows-1251", $_GET["text"]);
+	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
+$sql = <<<SQL
+UPDATE `SecondText` SET `text`='$BHJFGUDSGFKJD' WHERE `ID_html`='$PageId';
+SQL;
+	mysqli_query($conn, $sql);
+	$conn->close();
+}
+
+function Print_Test()
+{
+	Print_sadas();
+}
 ?>
 <script>
 function Post(_PHP,_Send_Params,insertHtmlId) {
@@ -161,7 +200,6 @@ SQL;
 		echo($row['TEXT']);
 	}
 	$conn->close();
-	
 ?>
 </textarea>
 <script defer>
@@ -175,9 +213,12 @@ console.log(document.getElementById("PassWord").value);
 	{
 		alert("dfkgoldfjghkjdlk");
 		window.open("http://vseobelectrogitarah.ru/index.php"
-			+"?text="+encodeURIComponent(document.getElementById("id_160923052022_textarea").value)
-			+"?a="+encodeURIComponent(document.getElementById("LogInn").value)
-			+"?b="+encodeURIComponent(document.getElementById("PassWord").value)
+			+"?"
+			+"LogInn="+encodeURIComponent(document.getElementById("LogInn").value)
+			+"&"
+			+"PassWord="+encodeURIComponent(document.getElementById("PassWord").value)
+			+"&"
+			+"text="+encodeURIComponent(document.getElementById("id_160923052022_textarea").value)
 		);
 		var wegfdhfdfhfbhn="?a="+encodeURIComponent(document.getElementById("skjfhgkdfgksdgjk").value);
 		console.log("werwerw");
