@@ -1,5 +1,5 @@
 <?php
-$PageId = "id_160923052027";
+$PageId = "id_160923052028";
 ?>
 <?php
 //Вывод на экран параметра Get запроса
@@ -35,7 +35,7 @@ SQL;
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-	<title>Epiphone</title>
+	<title>Струны</title>
 <style>
 	p
 	{
@@ -100,7 +100,7 @@ SQL;
         
         <tr>
 			<td valign="top" >
-				<div id="id_160923052027" >
+				<div id="id_160923052028" >
 <?php
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
@@ -116,20 +116,20 @@ while ($row = mysqli_fetch_array($result))
 $conn->close();
 ?>
 				</div>
-				<button onclick='function_120927052027();'>ИзменитьКонтент</button>
+				<button onclick='function_120927052028();'>ИзменитьКонтент</button>
 				<script>
-				function function_120927052027() {
-					if(document.getElementById('id_120827052027').style.visibility=='visible')
-					{document.getElementById('id_120827052027').style.visibility='hidden';}
+				function function_120927052028() {
+					if(document.getElementById('id_120827052028').style.visibility=='visible')
+					{document.getElementById('id_120827052028').style.visibility='hidden';}
 					else
-					{document.getElementById('id_120827052027').style.visibility='visible';}
+					{document.getElementById('id_120827052028').style.visibility='visible';}
 				}
 				</script>
 			</td>
 			
 		</tr>
 		<tr >
-			<td valign="top" id="id_120827052027">
+			<td valign="top" id="id_120827052028">
 
 
 				<center>
@@ -138,7 +138,7 @@ $conn->close();
 						<input maxlength="25" size="40" name="login" id="LogInn" value="Log"></p>
 						<p><strong>Пароль:</strong> 
 						<input type="password" maxlength="25" size="40" name="password" id="PassWord" value="Pass"></p>
-				<textarea id="id_160923052027_textarea" onchange="onchange_78452387478234();" id="skjfhgkdfgksdgjk">
+				<textarea id="id_160923052026_textarea" onchange="onchange_78452387478234();" id="skjfhgkdfgksdgjk">
 <?php
 	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
@@ -164,14 +164,14 @@ console.log(document.getElementById("PassWord").value);
 	function onchange_78452387478234()
 	{
 		
-		alert("dfkgoldfjghkjdlk");
-		window.open("http://vseobelectrogitarah.ru/Epiphone.php"
+		alert("Вы уверены?");
+		window.open("http://vseobelectrogitarah.ru/Str.php"
 			+"?"
 			+"LogInn="+encodeURIComponent(document.getElementById("LogInn").value)
 			+"&"
 			+"PassWord="+encodeURIComponent(document.getElementById("PassWord").value)
 			+"&"
-			+"text="+encodeURIComponent(document.getElementById("id_160923052027_textarea").value)
+			+"text="+encodeURIComponent(document.getElementById("id_160923052026_textarea").value)
 		);
 		var wegfdhfdfhfbhn="?a="+encodeURIComponent(document.getElementById("skjfhgkdfgksdgjk").value);
 		console.log("werwerw");

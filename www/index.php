@@ -4,12 +4,14 @@ $PageId = "id_160923052022";
 <?php
 //Вывод на экран параметра Get запроса
 function Print_GET_Param($var_1){if($_GET[$var_1]==null){echo $var_1;echo "=null<br>";}else{echo $var_1;echo "=";echo  iconv( "UTF-8","windows-1251", $_GET[$var_1]);echo "<br>";}};
-Print_GET_Param("LogInn");
-Print_GET_Param("PassWord");
+//Print_GET_Param("LogInn");
+//Print_GET_Param("PassWord");
 //Print_GET_Param("text");
-echo "!!!!!!!!!!!!!!!!!!!!";echo "<br>";
+//echo "!!!!!!!!!!!!!!!!!!!!";echo "<br>";
+
 
 /*
+//здесь была куча ошибок самого языка,
 //Не удалять до лучших времен
 if($_GET["text"]==null)echo 'if($_GET["text"]==null)<br>';
 if($_GET["text"]<>null)echo 'if($_GET["text"]<>null)<br>';
@@ -24,24 +26,31 @@ $var_1="PassWord";
 $Flag=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
 if($Flag=="Pass"){echo 'if(iconv( "UTF-8","windows-1251", $_GET[$var_1])=="Pass")';echo "<br>";}
 */
+//При подстановке всех значений в строку где они применяются, строка переставала интерпритироваться
+//После плясок вокруг программного кода получилось следующее
 $var_1="LogInn";
 $Flag_LogInn=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
 $var_1="PassWord";
 $Flag_PassWord=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
-
+//При подстановке всех значений в строку где они применяются, строка переставала интерпритироваться
+//После плясок вокруг программного кода получилось следующее
 if($_GET["text"]<>null)if($_GET["LogInn"]<>null)if($_GET["PassWord"]<>null)
 	if($Flag_LogInn=="Log")
 		if($Flag_PassWord=="Pass")
-{
-	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-	//!!!!	
+	//echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+	//Подключение к базе данных
 	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
+	//Исправление проблем с кодировкой PHP при передачи знаничений через через Get параметры
 	$BHJFGUDSGFKJD=iconv( "UTF-8","windows-1251", $_GET["text"]);
 	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
+//SQL код на обновление записи в базе данных в многострочной переменной
+//Многострочная переменная использовалась по причине того что в интернете был пример с подстановкой в нее переменной PHP
 $sql = <<<SQL
 UPDATE `SecondText` SET `text`='$BHJFGUDSGFKJD' WHERE `ID_html`='$PageId';
 SQL;
+	//Выполнение самого запроса
 	mysqli_query($conn, $sql);
+	//Закрытие подключения к базе данных.//Закрувать нужно обязательно, иначе открытые подключения будут висеть и оттягивать рессурсы.
 	$conn->close();
 }
 
@@ -93,10 +102,9 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
         text-align: justify;
 	}
 	<!--
-	button[name="Run"]
+	button[name="function_120927052022"]
 	{
-		padding: 10px 25px;
-		border: none;
+		
 	}
 	-->
 	</style>
@@ -119,7 +127,7 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 
 						</ul>
 					</li>
-					<li><a href="#">Струны</a></li>
+					<li><a href="Str.php">Струны</a></li>
 					<li><a href="#">Как устроена</a></li>
 				</ul>	
 			</li>
@@ -173,11 +181,12 @@ $conn->close();
 					{document.getElementById('id_120827052022').style.visibility='visible';}
 				}
 				</script>
+				
 			</td>
 			
 		</tr>
 		<tr >
-			<td valign="top" id="id_120827052022">
+			<td valign="top" id="id_120827052022" >
 
 
 				<center>
