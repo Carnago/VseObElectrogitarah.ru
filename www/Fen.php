@@ -1,5 +1,5 @@
 <?php
-$PageId = "id_160923052028";
+$PageId = "id_160923052032";
 ?>
 <?php
 //Вывод на экран параметра Get запроса
@@ -35,7 +35,7 @@ SQL;
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-	<title>Струны</title>
+	<title>Fender</title>
 <style>
 	p
 	{
@@ -100,7 +100,7 @@ SQL;
         
         <tr>
 			<td valign="top" >
-				<div id="id_160923052028" >
+				<div id="id_160923052032" >
 <?php
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
@@ -116,20 +116,20 @@ while ($row = mysqli_fetch_array($result))
 $conn->close();
 ?>
 				</div>
-				<button onclick='function_120927052028();'>ИзменитьКонтент</button>
+				<button onclick='function_120927052032();'>ИзменитьКонтент</button>
 				<script>
-				function function_120927052028() {
-					if(document.getElementById('id_120827052028').style.visibility=='visible')
-					{document.getElementById('id_120827052028').style.visibility='hidden';}
+				function function_120927052032() {
+					if(document.getElementById('id_120827052032').style.visibility=='visible')
+					{document.getElementById('id_120827052032').style.visibility='hidden';}
 					else
-					{document.getElementById('id_120827052028').style.visibility='visible';}
+					{document.getElementById('id_120827052032').style.visibility='visible';}
 				}
 				</script>
 			</td>
 			
 		</tr>
 		<tr >
-			<td valign="top" id="id_120827052028">
+			<td valign="top" id="id_120827052032">
 
 
 				<center>
@@ -165,7 +165,7 @@ console.log(document.getElementById("PassWord").value);
 	{
 		
 		alert("Вы уверены?");
-		window.open("http://vseobelectrogitarah.ru/Str.php"
+		window.open("http://vseobelectrogitarah.ru/Fen.php"
 			+"?"
 			+"LogInn="+encodeURIComponent(document.getElementById("LogInn").value)
 			+"&"

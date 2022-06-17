@@ -70,28 +70,28 @@ SQL;
 						</ul>
 					</li>
 					<li><a href="Str.php">Струны</a></li>
-					<li><a href="#">Как устроена</a></li>
+					<li><a href="Ust.php">Как устроена</a></li>
 				</ul>	
 			</li>
 
-			<li><a href="#"><i class="g-guitarists">Гитаристы</i></a></li>
+			<li><a href="Guit.php"><i class="g-guitarists">Гитаристы</i></a></li>
 			<li><a href="#"><i class="g-history">История</i></a>
 				<ul>
 					<li><a href="#">Производители гитар</a>
 						<ul>
-							<a href="#">Fender</a>
-							<a href="#">Gibson</a>
-							<a href="#">Ibanez</a>
+							<a href="Fen.php">Fender</a>
+							<a href="Gib.php">Gibson</a>
+							<a href="Iba.php">Ibanez</a>
 							<a href="epiphone.php">Epiphone</a>
 							
 
 						</ul>
 					</li>
-					<li><a href="#">Производители струн</a></li>
+					<li><a href="PrStr.php">Производители струн</a></li>
 					
 				</ul>
 			</li>
-			<li><a href="#"><i class="g-style">Техники игры</i></a></li>
+			<li><a href="Tec.php"><i class="g-style">Техники игры</i></a></li>
 		</ul>
 
 		</nav>
@@ -164,7 +164,7 @@ console.log(document.getElementById("PassWord").value);
 	function onchange_78452387478234()
 	{
 		
-		alert("dfkgoldfjghkjdlk");
+		alert("Вы уверены?");
 		window.open("http://vseobelectrogitarah.ru/Epiphone.php"
 			+"?"
 			+"LogInn="+encodeURIComponent(document.getElementById("LogInn").value)

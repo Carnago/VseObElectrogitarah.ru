@@ -28,38 +28,40 @@ if($Flag=="Pass"){echo 'if(iconv( "UTF-8","windows-1251", $_GET[$var_1])=="Pass"
 */
 //При подстановке всех значений в строку где они применяются, строка переставала интерпритироваться
 //После плясок вокруг программного кода получилось следующее
+
 $var_1="LogInn";
 $Flag_LogInn=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
 $var_1="PassWord";
 $Flag_PassWord=iconv( "UTF-8","windows-1251", $_GET[$var_1]);
 //При подстановке всех значений в строку где они применяются, строка переставала интерпритироваться
 //После плясок вокруг программного кода получилось следующее
+//Это фильтр при запуске
+//Либо мы отображаем контент
+//Либо мы его изменяем и потом отображаем
 if($_GET["text"]<>null)if($_GET["LogInn"]<>null)if($_GET["PassWord"]<>null)
 	if($Flag_LogInn=="Log")
 		if($Flag_PassWord=="Pass")
-	//echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+{
 	//Подключение к базе данных
 	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 	//Исправление проблем с кодировкой PHP при передачи знаничений через через Get параметры
 	$BHJFGUDSGFKJD=iconv( "UTF-8","windows-1251", $_GET["text"]);
 	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 //SQL код на обновление записи в базе данных в многострочной переменной
-//Многострочная переменная использовалась по причине того что в интернете был пример с подстановкой в нее переменной PHP
+//Многострочная переменная использовалась
+// по причине того что в интернете был пример с подстановкой в нее переменной PHP
 $sql = <<<SQL
 UPDATE `SecondText` SET `text`='$BHJFGUDSGFKJD' WHERE `ID_html`='$PageId';
-SQL;
-	//Выполнение самого запроса
+SQL;//теперь - Выполнение самого запроса
 	mysqli_query($conn, $sql);
-	//Закрытие подключения к базе данных.//Закрувать нужно обязательно, иначе открытые подключения будут висеть и оттягивать рессурсы.
+	//Закрытие подключения к базе данных.//Закрывать нужно обязательно,
+//	иначе открытые подключения будут висеть и оттягивать рессурсы.
 	$conn->close();
-}
-
-function Print_Test()
-{
-	Print_sadas();
 }
 ?>
 <script>
+//JS функция Past запроса к PHP серверу.
+//Ныне не используется , нами ...
 function Post(_PHP,_Send_Params,insertHtmlId) {
 	function Get_XmlHttp() {
 		var xmlhttp;
@@ -72,13 +74,11 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 	var xmlhttp = Get_XmlHttp();
 	xmlhttp.open('POST', _PHP, true); // Открываем асинхронное соединение
 	xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-	
     xmlhttp.onload = function() { // Ждём ответа от сервера
 		document.getElementById(insertHtmlId).innerHTML = xmlhttp.responseText; // Выводим ответ сервера
 		xhr.abort();
     };
 	xmlhttp.send(_Send_Params); // Отправляем POST-запрос
-	
 }
 </script>
 
@@ -128,28 +128,28 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 						</ul>
 					</li>
 					<li><a href="Str.php">Струны</a></li>
-					<li><a href="#">Как устроена</a></li>
+					<li><a href="Ust.php">Как устроена</a></li>
 				</ul>	
 			</li>
 
-			<li><a href="#"><i class="g-guitarists">Гитаристы</i></a></li>
+			<li><a href="Guit.php"><i class="g-guitarists">Гитаристы</i></a></li>
 			<li><a href="#"><i class="g-history">История</i></a>
 				<ul>
 					<li><a href="#">Производители гитар</a>
 						<ul>
-							<a href="#">Fender</a>
-							<a href="#">Gibson</a>
-							<a href="#">Ibanez</a>
+							<a href="Fen.php">Fender</a>
+							<a href="Gib.php">Gibson</a>
+							<a href="Iba.php">Ibanez</a>
 							<a href="epiphone.php">Epiphone</a>
 							
 
 						</ul>
 					</li>
-					<li><a href="#">Производители струн</a></li>
+					<li><a href="PrStr.php">Производители струн</a></li>
 					
 				</ul>
 			</li>
-			<li><a href="#"><i class="g-style">Техники игры</i></a></li>
+			<li><a href="Tec.php"><i class="g-style">Техники игры</i></a></li>
 		</ul>			
 	</nav>
 </header>
@@ -158,6 +158,9 @@ function Post(_PHP,_Send_Params,insertHtmlId) {
 			<td valign="top" >
 				<div id="id_160923052022" >
 <?php
+//Получение контента из базы данных
+//Из за особенностей языка кусок программного кода не работает будучи размещенным в теле функции
+//Из за особенностей языка кусок програмного кода присутствует в файле целых 2 раза.
 $conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 $sql = <<<SQL
@@ -187,8 +190,6 @@ $conn->close();
 		</tr>
 		<tr >
 			<td valign="top" id="id_120827052022" >
-
-
 				<center>
 					<form action="handler.php">
 						<p><strong>Логин:</strong> 
@@ -197,6 +198,9 @@ $conn->close();
 						<input type="password" maxlength="25" size="40" name="password" id="PassWord" value="Pass"></p>
 				<textarea id="id_160923052022_textarea" onchange="onchange_78452387478234();" id="skjfhgkdfgksdgjk">
 <?php
+//Получение контента из базы данных
+//Из за особенностей языка кусок программного кода не работает будучи размещенным в теле функции
+//Из за особенностей языка кусок програмного кода присутствует в файле целых 2 раза.
 	$conn = new mysqli("localhost", "Moderator", "270380","VseOElectroGitarah");
 	if($conn->connect_error){die("Ошибка: " . $conn->connect_error);}
 $sql = <<<SQL
@@ -220,7 +224,9 @@ console.log(document.getElementById("PassWord").value);
 <script>
 	function onchange_78452387478234()
 	{
-		alert("dfkgoldfjghkjdlk");
+		//JavaScript Get запрос к PHP файлу на открытие в новой вкладке
+		//С шифрованием передааемых параметров через encodeURI
+		alert("Вы уверены?");
 		window.open("http://vseobelectrogitarah.ru/index.php"
 			+"?"
 			+"LogInn="+encodeURIComponent(document.getElementById("LogInn").value)
